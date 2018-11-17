@@ -3,6 +3,7 @@ import './App.css';
 import AppContent from './components/AppContent'
 import Title from './components/Title'
 import Wrapper from './components/Wrapper'
+import Button from './components/Button'
 
 class App extends Component {
   render() {
@@ -10,6 +11,9 @@ class App extends Component {
       <AppContent>
         <Wrapper>
           <Title/>
+        </Wrapper>
+        <Wrapper>
+          <Button />
         </Wrapper>
       </AppContent>
     );
