@@ -13,7 +13,12 @@ class App extends Component {
           <Title/>
         </Wrapper>
         <Wrapper>
-          <Button />
+          <Button 
+            type='primary' 
+            text='Add Debit' />
+          <Button 
+            type='secundary' 
+            text='Add Credit' />
         </Wrapper>
       </AppContent>
     );
