@@ -31,17 +31,14 @@ const SecundaryButton = styled(StyledButton)`
 `
 
 class Button extends Component {
-  handleClick = () => {
-    alert('Clicked!')
-  }
   renderType = (type) => {
     switch(type) {
       case 'primary':
-        return <PrimaryButton> {this.props.text} </PrimaryButton>
+        return <PrimaryButton> {this.props.children} </PrimaryButton>
       case 'secundary':
-        return <SecundaryButton> {this.props.text} </SecundaryButton>
+        return <SecundaryButton> {this.props.children} </SecundaryButton>
       default:
-        return <StyledButton> {this.props.text} </StyledButton>
+        return <StyledButton> {this.props.children} </StyledButton>
     }
   }
   render() {
