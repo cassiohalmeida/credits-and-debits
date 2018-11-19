@@ -8,14 +8,16 @@ import Input from './components/Input'
 import Transactions from './components/Transactions'
 import { connect } from 'react-redux'
 import { addTransaction, incrementAmount, decrementAmount } from './redux/actions'
-import { v4 } from 'uuid'
+import Amount from './components/Amount'
 
 class App extends Component {
   render() {
     return (
       <AppContent>
         <Wrapper>
-          <Title/>
+          <Title>
+            Credits and Debits
+          </Title>
         </Wrapper>
         <form onSubmit={this.props.addTransaction}>
           <Wrapper>
@@ -24,24 +26,23 @@ class App extends Component {
           <Wrapper>
             <label>Credit</label>
             <Input required={true} name='transaction_type' type='radio' defaultValue='credit'/>
-          </Wrapper>
-          <Wrapper>
             <label>Debit</label>
             <Input required={true} name='transaction_type' type='radio' defaultValue='debit'/>
           </Wrapper>
           <Wrapper>
             <Button
-              value='credit'
-              visual='secundary'
+              primary
               type='submit'
-              onClick={this.handleClick}
-              text='Add Credit'>
+              onClick={this.handleClick}>
               Add transaction
             </Button>
           </Wrapper>
         </form>
         <Wrapper>
           <Transactions transactions={this.props.state.transactions}/>
+        </Wrapper>
+        <Wrapper>
+          <Amount/>
         </Wrapper>
       </AppContent>
     );

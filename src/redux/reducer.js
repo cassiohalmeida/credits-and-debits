@@ -1,9 +1,7 @@
 import { INCREMENT_AMOUNT, DECREMENT_AMOUNT, ADD_TRANSACTION, CLEAR_TRANSACTIONS } from './actions'
+import { loadState } from './localStorage'
 
-const initialState = {
-  transactions: [],
-  amount: 0,
-}
+const initialState = loadState()
 
 export default (state = initialState, action) => {
   switch(action.type) {

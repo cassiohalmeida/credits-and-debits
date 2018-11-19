@@ -1,24 +1,32 @@
 import React, { Component } from 'react'
-import styled from 'styled-components'
+import { Table, Tr, } from 'styled-table-component';
 
 class Transactions extends Component {
   render() {
     const { transactions } = this.props
-    let component;
     if (transactions.length === 0) {
-      component = <p>You do not have any transaction.</p>
-    } else {
-      component = <ul>
-        {this.props.transactions.map((transaction) => (
-          <li key={transaction.id}>Transactions: {transaction.type}</li>
-        ))}
-        
-      </ul>
+      return (<p>You do not have any transaction. Please add one.</p>)
     }
     return (
-      <div>
-        {component}
-      </div>
+      <Table hover>
+        <thead>
+          <tr>
+            <th scope="col">Type</th>
+            <th scope="col">Value</th>
+            <th scope="col">Created At</th>
+          </tr>
+        </thead>
+        <tbody>
+          {this.props.transactions.map((transaction) => (
+            <Tr textAlign='center' key={transaction.id}>
+              <th scope="row">{transaction.type.toUpperCase()}</th>
+              <td>R${Number(transaction.value).toLocaleString('pt-BR')}</td>
+              <td>{new Date(transaction.createdAt).toLocaleDateString('pt-BR')}</td>
+            </Tr>
+          ))}
+          
+        </tbody>
+      </Table>
     )
   }
 }

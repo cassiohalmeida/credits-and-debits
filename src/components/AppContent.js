@@ -6,6 +6,6 @@ const AppContent = styled.div`
   margin: 0 auto;
   background: #ffffff;
   border-radius: 3px;
-  padding-top:50px;
+  padding: 50px;
 `
 export default AppContent
