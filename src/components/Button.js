@@ -17,33 +17,32 @@ const StyledButton = styled.button`
   border-radius: 0;
   user-select: none;
   margin: 0 10px;
+  color: #fff;
 `
 
 const PrimaryButton = styled(StyledButton)`
-  color: #fff;
   background-color: #2c2e2f;
-  border-color: #202122;
 `;
 
 const SecundaryButton = styled(StyledButton)`
   background-color: #68b828;
-  color: #fff;
 `
 
 class Button extends Component {
-  renderType = (type) => {
-    switch(type) {
+  renderType = () => {
+    const { name, value, type, visual, children, onClick } = this.props
+    switch(visual) {
       case 'primary':
-        return <PrimaryButton> {this.props.children} </PrimaryButton>
+        return <PrimaryButton name={name} value={value} type={type} onClick={onClick}> {children} </PrimaryButton>
       case 'secundary':
-        return <SecundaryButton> {this.props.children} </SecundaryButton>
+        return <SecundaryButton name={name} value={value} type={type} onClick={onClick}> {children} </SecundaryButton>
       default:
-        return <StyledButton> {this.props.children} </StyledButton>
+        return <StyledButton name={name} value={value} type={type} onClick={onClick}> {children} </StyledButton>
     }
   }
   render() {
     return (
-      this.renderType(this.props.type)
+      this.renderType()
     )
   }
 }
