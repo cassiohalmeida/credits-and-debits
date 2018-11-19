@@ -7,5 +7,9 @@ const AppContent = styled.div`
   background: #ffffff;
   border-radius: 3px;
   padding: 50px;
+
+  @media (max-width: 767px) {
+    padding: 20px;
+  }
 `
 export default AppContent

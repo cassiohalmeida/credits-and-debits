@@ -7,10 +7,11 @@ import Button from './components/Button'
 import Input from './components/Input'
 import Transactions from './components/Transactions'
 import { connect } from 'react-redux'
-import { addTransaction, incrementAmount, decrementAmount } from './redux/actions'
+import { addTransaction, incrementAmount, decrementAmount, clearTransactions } from './redux/actions'
 import Amount from './components/Amount'
 
 class App extends Component {
+  
   render() {
     return (
       <AppContent>
@@ -31,13 +32,19 @@ class App extends Component {
           </Wrapper>
           <Wrapper>
             <Button
-              primary
               type='submit'
               onClick={this.handleClick}>
               Add transaction
             </Button>
           </Wrapper>
         </form>
+        <Wrapper>
+          <Button onClick={this.props.clearTransactions}
+            className={this.props.state.transactions.length > 0 ? 'show' : 'hidden' }
+            primary>
+            Clear all transactions
+          </Button>
+        </Wrapper>
         <Wrapper>
           <Transactions transactions={this.props.state.transactions}/>
         </Wrapper>
@@ -64,6 +71,9 @@ const mapDispatchToProps = (dispatch) => ({
     } else {
       dispatch(decrementAmount(Number(e.target.transaction.value)))
     }
+  },
+  clearTransactions: () => {
+    dispatch(clearTransactions())
   }
 })
 

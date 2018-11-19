@@ -13,7 +13,7 @@ class Transactions extends Component {
           <tr>
             <th scope="col">Type</th>
             <th scope="col">Value</th>
-            <th scope="col">Created At</th>
+            <th scope="col">Created</th>
           </tr>
         </thead>
         <tbody>

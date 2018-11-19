@@ -27,7 +27,7 @@ export default (state = initialState, action) => {
       }
     case CLEAR_TRANSACTIONS:
       return {
-        ...state,
+        amount: 0,
         transactions: []
       }
     default:

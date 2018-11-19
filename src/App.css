@@ -3,3 +3,9 @@ body {
   margin-top: 50px;
   background-color: #eeeeee;
 }
+.show {
+  display: block;
+}
+.hidden {
+  display: none!important;
+}

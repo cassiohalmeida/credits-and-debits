@@ -2,29 +2,29 @@ import React, { Component } from 'react'
 import styled from 'styled-components'
 
 const StyledButton = styled.button`
-  border-radius: 5px;
-  display: inline-block;
-  margin-bottom: 0;
+  border-radius: 3px;
   font-weight: 400;
   text-align: center;
   vertical-align: middle;
-  touch-action: manipulation;
   cursor: pointer;
-  border: 1px solid transparent;
+  border: 0;
   padding: 6px 12px;
   font-size: 13px;
   line-height: 1.42;
-  border-radius: 0;
-  user-select: none;
   margin: 0 10px;
   color: #fff;
-  background-color: ${props => props.primary ? "#2c2e2f" : "#68b828"};
+  background-color: ${props => props.primary ? "#2c2e2f" : "#68b828"}
 `
 class Button extends Component {
   render() {
-    const { name, type, children, onClick } = this.props
     return (
-      <StyledButton name={name} type={type} onClick={onClick}> {children} </StyledButton>
+      <StyledButton primary={this.props.primary}
+        className={this.props.className} 
+        name={this.props.name}
+        type={this.props.type}
+        onClick={this.props.onClick}>
+        {this.props.children} 
+      </StyledButton>
     )
   }
 }

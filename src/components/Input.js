@@ -4,8 +4,12 @@ import styled from 'styled-components'
 const StyledInput = styled.input`
   border: 1px solid #eaeaea;
   padding: 10px;
-  min-width: 300px;
+  min-width: ${props => props.type === 'radio' ? "auto" : "300px"};
   margin: 2px 10px 0 5px;
+
+  @media (max-width: 767px) {
+    min-width: ${props => props.type === 'radio' ? "auto" : "100px"};
+  }
 `
 
 class Input extends Component {

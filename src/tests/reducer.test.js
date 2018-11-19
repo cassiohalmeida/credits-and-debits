@@ -89,6 +89,7 @@ it('it should clear all transactions', () => {
   }
   const after = {
     transactions: [],
+    amount: 0
   }
   expect(reducer(before, action)).toEqual(after)
 });
