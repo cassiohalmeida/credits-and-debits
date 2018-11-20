@@ -1,4 +1,4 @@
-# Credits and Debetis
+# Credits and Debetis [![Build Status](https://travis-ci.org/cassiohalmeida/credits-and-debits.svg?branch=master)](https://travis-ci.org/cassiohalmeida/credits-and-debits)
 
 > A simple app to track your credits and debits <br>
 > Check it live here : <a href="https://confident-shirley-11d9f2.netlify.com/">https://confident-shirley-11d9f2.netlify.com/</a> <br>
