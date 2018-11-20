@@ -1,14 +1,14 @@
 # Credits and Debetis
 
-> A simple app to track your credits and debits
-> Check it live here : <a href="https://confident-shirley-11d9f2.netlify.com/">https://confident-shirley-11d9f2.netlify.com/</a>
+> A simple app to track your credits and debits <br>
+> Check it live here : <a href="https://confident-shirley-11d9f2.netlify.com/">https://confident-shirley-11d9f2.netlify.com/</a> <br>
 > This project is built with:
 
 | Lib/Framework | Version |
 | ------------- | ------- |
 | ReactJS       | 16.6.3  |
 | Redux         | 4.0.1   |
-| StyleComponets | 4.1.1  |
+| StyledComponets | 4.1.1  |
 
 ## NodeJS
 
