@@ -93,3 +93,26 @@ it('it should clear all transactions', () => {
   }
   expect(reducer(before, action)).toEqual(after)
 });
+
+it('transaction should contain the last amount value', () => {
+  const before = {
+    transactions: [
+      {
+        value: -1256.78,
+        type: 'debit'
+      },
+      {
+        value: 2543.78,
+        type: 'credit'
+      }
+    ],
+  }
+  const action = {
+    type: CLEAR_TRANSACTIONS
+  }
+  const after = {
+    transactions: [],
+    amount: 0
+  }
+  expect(reducer(before, action)).toEqual(after)
+});

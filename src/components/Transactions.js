@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Table, Tr, } from 'styled-table-component';
+import { calculateTransactionAmount } from '../mixins/transaction';
 
 class Transactions extends Component {
   render() {
@@ -13,14 +14,16 @@ class Transactions extends Component {
           <tr>
             <th scope="col">Type</th>
             <th scope="col">Value</th>
+            <th scope="col">Amount</th>
             <th scope="col">Created</th>
           </tr>
         </thead>
         <tbody>
-          {this.props.transactions.map((transaction) => (
+          {this.props.transactions.map((transaction, index) => (
             <Tr textAlign='center' key={transaction.id}>
               <th scope="row">{transaction.type.toUpperCase()}</th>
               <td>R${Number(transaction.value).toLocaleString('pt-BR')}</td>
+              <td>R${Number(calculateTransactionAmount(transactions, index)).toLocaleString('pt-BR')}</td>
               <td>{new Date(transaction.createdAt).toLocaleDateString('pt-BR')}</td>
             </Tr>
           ))}
