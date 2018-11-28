@@ -116,3 +116,17 @@ it('transaction should contain the last amount value', () => {
   }
   expect(reducer(before, action)).toEqual(after)
 });
+
+it('it should not add am empty transaction', () => {
+  const before = {
+    transactions: [],
+  }
+  const action = {
+    type: ADD_TRANSACTION,
+    payload: {}
+  }
+  const after = {
+    transactions: [],
+  }
+  expect(reducer(before, action)).toEqual(after)
+});

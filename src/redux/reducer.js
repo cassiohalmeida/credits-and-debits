@@ -16,6 +16,12 @@ export default (state = initialState, action) => {
         amount: (state.amount - action.payload.value)
       }
     case ADD_TRANSACTION:
+      if (Object.keys(action.payload).length == 0) {
+        return {
+          ...state,
+          transactions: [...state.transactions]
+        }
+      }
       return {
         ...state,
         transactions: [...state.transactions, {

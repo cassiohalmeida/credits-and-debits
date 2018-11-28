@@ -64,7 +64,7 @@ const mapDispatchToProps = (dispatch) => ({
   addTransaction: (e) => {
     e.preventDefault()
     const transactionType = e.target.transaction_type.value;
-    const transactionValue = e.target.transaction.value;
+    const transactionValue = Number(e.target.transaction.value);
     dispatch(addTransaction(transactionValue, transactionType))
     if (transactionType === 'credit') {
       dispatch(incrementAmount(Number(e.target.transaction.value)))
